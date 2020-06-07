@@ -77,6 +77,46 @@ def ej2():
     Se debe debe imprimir un cartel de error si el operador ingresado no es
     alguno de lo soportados o no es la palabra "FIN"
     '''
+    fin = True
+    while fin == True:
+        print("Ingrese el primer numero a calcular: ")
+        num_1 = float(input(""))
+        print("Ingrese el segundo numero a calcular")
+        num_2 = float(input())
+
+        print("Ingrese la operacion que desea realizar con el simbolo correspondiente:")
+        print("-Suma ( + )");print("Resta ( - )");print("Multiplicacion ( * )");print("Division ( / )");print("Exponencial (**)");print("Cerrar calculadora( f )")
+        opcion = str(input())
+
+        if opcion == "+":
+            resultado = num_1 + num_2
+            print("El resultado es: {}".format(resultado))
+
+        elif opcion == "-":
+                resultado = num_1 - num_2
+                print("El resultado es: {}".format(resultado))
+
+        elif opcion == "*":
+                resultado = num_1 * num_2
+                print("El resultado es: {}".format(resultado))
+        
+        elif opcion == "/":
+                resultado = num_1 / num_2
+                print("El resultado es: {}".format(resultado))
+
+        elif opcion == "**":
+                resultado = num_1 ** num_2
+                print("El resultado es: {}".format(resultado))
+            
+        elif opcion == "f":
+                print(" ADIOS ")
+                fin = False
+
+        else:
+                print("No esta indicando una operacion valida")
+
+    
+
 
 
 def ej3():
@@ -265,7 +305,7 @@ def ej5():
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     #ej1()
-    #ej2()
+    ej2()
     #ej3()
     #ej4()
     #ej5()
