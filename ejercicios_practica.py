@@ -150,14 +150,41 @@ def ej3():
 
     # Realice aquí el bucle para recorrer todas las notas
     # y cacular la sumatoria
+    for i in notas:
+        if i > 0:
+            sumatoria += i
+            cantidad_notas += 1
+        else:
+            cantidad_ausentes += 1
 
     # Terminado el bucle calcule el promedio como
     # promedio = sumatoria / cantidad_notas
-
+    puntaje = sumatoria / cantidad_notas
     # Utilice la nota promedio calculada y transformela
     # a calificación con letras, imprima en pantalla el resultado
 
     # Imprima en pantalla al cantidad de ausentes
+    print("Cantidad de ausentes: {}".format(cantidad_ausentes))
+    print("Cantidad de notas : {}".format(cantidad_notas))
+
+    
+    # Si el puntaje es mayor igual a 90 --> imprimir A
+    # Si el puntaje es mayor igual a 80 --> imprimir B
+    # Si el puntaje es mayor igual a 70 --> imprimir C
+    # Si el puntaje es mayor igual a 60 --> imprimir D
+    # Si el puntaje es manor a  60      --> imprimir F
+    if puntaje >= 90:
+        print("El promedio corresponde a : A")
+    elif puntaje >=80 and puntaje < 90:
+        print("El promedio corresponde a : B")
+    elif puntaje >=70 and puntaje < 80:
+        print("El promedio corresponde a :C")
+    elif puntaje >= 60 and puntaje <= 70:
+        print("El promedio corresponde a : D")
+    else:
+        print("El promedio corresponde a : F")
+    
+    
 
 
 def ej4():
@@ -305,7 +332,7 @@ def ej5():
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     #ej1()
-    ej2()
-    #ej3()
+    #ej2()
+    ej3()
     #ej4()
     #ej5()
