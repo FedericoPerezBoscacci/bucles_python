@@ -36,17 +36,32 @@ def ej1():
     '''
 
     # inicio = ....
+    inicio = int(input("Ingrese el numero inicial de la secuencia: "))
+
     # fin = ....
+    fin = int(input("Ingrese el numero final de la secuencia:"))
 
     # cantidad_numeros ....
     # sumatoria ....
-
+    suma = 0
+    contador = 0
     # bucle.....
+    for i in range (inicio,fin):
+        if i > -100 :
+            contador += 1
+        
+        suma += i
+    print("La cantidad de numeros de la secuencia es de: {}".format(contador))
+    print("La sumatoria de los numeros es: {}".format(suma))
+
 
     # Al terminar el bucle calcular el promedio como:
     # promedio = sumatoria / cantidad_numeros
+    promedio = suma/contador
+
 
     # Imprimir resultado en pantalla
+    print("El promedio es : {}".format(promedio))
 
 
 def ej2():
