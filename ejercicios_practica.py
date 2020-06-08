@@ -382,24 +382,29 @@ def ej5():
         
         elif opcion == 2:
             print("Ingrese cuatro palabras para el ordenamiento solicitado.")
-
-        
+            
             for i in range(0,4):
-                print("Ingrese la palabra numero: {} ".format(i))
+                  print("Ingrese la palabra numero: {} ".format(i))
+                  aux = str(input())
+                  lista_palabras.append(aux)
+            
+            aux2 = len(lista_palabras[0])
+            
+            for i in lista_palabras:
                 
-                aux = str(input())
-                lista_palabras.append(aux)
+
+                if len(i) >= aux2:
+                   aux3 = len(i) 
             
             
-                
+        
+        print("La palabra con mayor longuitud de letras es {}".format(aux3))
 
 
 
-                    
 
-    
-            
-            print("La palabra con mayor longuitud de letras es {}".format(aux2))
+
+
 
 
            
