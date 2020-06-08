@@ -220,12 +220,26 @@ def ej4():
     '''
 
     temperatura_max = None      # Aquí debe ir almacenando la temp máxima
-    temperatura_min = None      # Aquí debe ir almacenando la temp mínima
+    temperatura_min = None    # Aquí debe ir almacenando la temp mínima
     temperatura_sumatoria = 0   # Aquí debe ir almacenando la suma de todas las temp
     temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el promedio
     temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
     # Colocar el bucle aqui......
+
+    for i in temp_dataloger:
+        if (temperatura_max == None) or (i > temperatura_max):
+              temperatura_max = i
+        
+        if (temperatura_min == None) or (i < temperatura_min):
+              temperatura_min = i
+    
+    temperatura_sumatoria += i
+    temperatura_len = len(temp_dataloger)
+    temperatura_promedio = temperatura_sumatoria / temperatura_len
+    
+
+
 
     # Al finalizar el bucle compare si el valor que usted calculó para
     # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -233,8 +247,11 @@ def ej4():
     # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
     # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
 
+
     # Al finalizar el bucle debe calcular el promedio como:
     # temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+    print("Promedio de las temperaturas: {}".format(temperatura_promedio))
+
 
     # Corroboren los resultados de temperatura_sumatoria
     # usando la función "sum"
@@ -260,6 +277,11 @@ def ej4():
     # Imprima el resultado en pantalla
     # Debe utilizar temperatura_max y temperatura_min para definirlo
 
+    
+
+
+
+
 
 def ej5():
     print("Ahora sí! buena suerte :)")
@@ -275,6 +297,8 @@ def ej5():
     1 - Ordenar por orden alfabético (usando el operador ">")
     2 - Ordenar por cantidad de letras (longitud de la palabra)
     3 - Salir del programa
+    
+
 
     En caso de presionar "3" el programa debe terminar e informar por
     pantalla de que ha acabado,
@@ -327,12 +351,68 @@ def ej5():
        recorre la lista de palabras y busca la mayor según el motivo ingresado ("1" o "2")
 
   '''
+    salir = True
+    lista_palabras = []
+    
+    while salir == True:
+        print("Ingrese opcion:");print("Ordenar alfabeticamente presione (1)");print("Ordenar por longuitud presione (2)");print("Salir del programa presione (3)")
+        opcion = int(input())
+
+        if opcion == 3:
+            print("El programa se termino")
+            salir = False
+        
+        elif opcion == 1 :
+            
+            print("Se deberan ingresar cuatro palabras para el ordenamiento solicitado.")
+
+            for i in range(0,4):
+                print("Ingrese la palabra numero: {} ".format(i))
+                aux = str(input())
+                lista_palabras.append(aux)
+
+
+            maximo = ""
+            for i in lista_palabras:
+                if i > maximo:
+                    maximo = i
+            
+        
+            print("La palabra mas grande alfabeticamente es: {} ".format(maximo))
+        
+        elif opcion == 2:
+            print("Ingrese cuatro palabras para el ordenamiento solicitado.")
+
+        
+            for i in range(0,4):
+                print("Ingrese la palabra numero: {} ".format(i))
+                
+                aux = str(input())
+                lista_palabras.append(aux)
+            
+            
+                
+
+
+
+                    
+
+    
+            
+            print("La palabra con mayor longuitud de letras es {}".format(aux2))
+
+
+           
+
+            
+
+
 
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     #ej1()
     #ej2()
-    ej3()
+    #ej3()
     #ej4()
-    #ej5()
+    ej5()
